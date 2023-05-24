@@ -8,8 +8,15 @@ function ShowChart({ data, scale, mode}) {
     titleText = 'Temperature vs Time';
   } else if (scale === 'RH'){
     labelText = 'RH'
-    titleText = 'Humidity vs Time';
+    titleText = 'Relative Humidity vs Time';
+  } else if (scale === 'SH'){
+    labelText = 'SH'
+    titleText = 'Soil Humidity vs Time';
+  } else if (scale === 'IC'){
+    labelText = 'IC'
+    titleText = 'Light Intensity vs Time';
   }
+
 
   const chartData = {
     labels: data.map((d) => d.Waktu),
@@ -21,23 +28,11 @@ function ShowChart({ data, scale, mode}) {
       label: `Avg ${labelText}`,
       data: data.map((d) => d[`${scale}_Mean`]),
     });
-
-    chartData.datasets.push({
-      label: `Avg ${labelText} Ref`,
-      data: data.map((d) => d[`${scale}_Ref_Mean`]),
-    });
   } else if (mode === "Spot"){
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= 4; i++) {
       chartData.datasets.push({
         label: `${labelText}${i}`,
         data: data.map((d) => d[`${scale}${i}`]),
-      });
-    }
-    
-    for (let i = 1; i <= 4; i++) {
-      chartData.datasets.push({
-        label: `${labelText}R${i}`,
-        data: data.map((d) => d[`${scale}_Ref${i}`]),
       });
     }
   }
