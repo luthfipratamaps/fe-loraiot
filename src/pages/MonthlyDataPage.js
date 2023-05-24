@@ -75,8 +75,12 @@ function MonthlyDataPage() {
         </div>
         <ShowChart data={data} scale={"Suhu"} mode={"Avg"}/><br /><br />
         <ShowChart data={data} scale={"RH"} mode={"Avg"}/><br /><br />
+        <ShowChart data={data} scale={"SH"} mode={"Avg"}/><br /><br />
+        <ShowChart data={data} scale={"IC"} mode={"Avg"}/><br /><br />
         <ShowChart data={data} scale={"Suhu"} mode={"Spot"}/><br /><br />
         <ShowChart data={data} scale={"RH"} mode={"Spot"}/><br /><br />
+        <ShowChart data={data} scale={"SH"} mode={"Spot"}/><br /><br />
+        <ShowChart data={data} scale={"IC"} mode={"Spot"}/><br /><br />
       </div>
     </div>
   );
