@@ -41,7 +41,7 @@ function DataPage() {
   const filterDate = (date) => {
     const dateString = date.toISOString().slice(0, 10);
     const result = availableDates.includes(dateString);
-    console.log(dateString, result);
+    // console.log(dateString, result);
     return result;
   };
 
@@ -62,8 +62,8 @@ function DataPage() {
         </div>
         <ShowChart data={data} scale={"Suhu"} mode={"Avg"}/><br /><br />
         <ShowChart data={data} scale={"RH"} mode={"Avg"}/><br /><br />
-        {/* <ShowChart data={data} scale={"Suhu"} mode={"Spot"}/><br /><br />
-        <ShowChart data={data} scale={"RH"} mode={"Spot"}/><br /><br /> */}
+        <ShowChart data={data} scale={"SH"} mode={"Avg"}/><br /><br />
+        <ShowChart data={data} scale={"IC"} mode={"Avg"}/><br /><br />
       </div>
     </div>
   );
