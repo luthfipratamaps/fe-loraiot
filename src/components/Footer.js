@@ -7,7 +7,7 @@ function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <p>&copy; 2023 Universitas Padjadjaran</p>
+            <p>&copy; 2023 MFK</p>
           </div>
         </div>
       </div>
