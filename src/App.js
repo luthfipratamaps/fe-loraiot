@@ -3,8 +3,6 @@ import MonthlyDataPage from './pages/MonthlyDataPage';
 import DataPage from './pages/DataPage';
 import Footer from './components/Footer';
 import './css/App.css';
-import logoLeft from './images/logo-left.png';
-import logoRight from './images/logo-right.png';
 
 function App() {
 
@@ -12,12 +10,9 @@ function App() {
     <Router>
       <div className="App">
         <div className="jumbotron-container">
-          <img src={logoLeft} alt="Organization logo" className="jumbotron-logo jumbotron-logo-left" />
           <div className="jumbotron">
-            <h1>Greenhouse Monitoring System</h1>
-            <p>Development phase</p>
+            <h1>Lora IoT Monitoring System</h1>
           </div>
-          <img src={logoRight} alt="Organization logo" className="jumbotron-logo jumbotron-logo-right" />
         </div>
         <nav>
           <ul>
