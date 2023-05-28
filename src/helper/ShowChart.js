@@ -35,6 +35,18 @@ function ShowChart({ data, scale, mode}) {
         data: data.map((d) => d[`${scale}${i}`]),
       });
     }
+  } else if (mode === "All"){
+    for (let i = 1; i <= 4; i++) {
+      chartData.datasets.push({
+        label: `${labelText}${i}`,
+        data: data.map((d) => d[`${scale}${i}`]),
+      });
+    }
+
+    chartData.datasets.push({
+      label: `Avg ${labelText}`,
+      data: data.map((d) => d[`${scale}_Mean`]),
+    });
   }
 
   const chartOptions = {
