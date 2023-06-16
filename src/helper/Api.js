@@ -14,6 +14,14 @@ class Api {
   static getDataByMonth(month) {
     return axios.get(`${baseApi}/monthly-data/${month}`);
   }
+  
+  static downloadData(date) {
+    return axios.get(`${baseApi}/download-data/${date}`);
+  }
+
+  static getNodes() {
+    return axios.get(`${baseApi}/nodes`);
+  }
 }
 
 export default Api;
