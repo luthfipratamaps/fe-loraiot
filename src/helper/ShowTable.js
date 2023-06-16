@@ -1,8 +1,9 @@
 import React from 'react';
+import '../css/Table.css';
 
 const ShowTable = ({ data }) => {
   return (
-    <table>
+    <table className="table">
       <thead>
         <tr>
           <th>Node Id</th>

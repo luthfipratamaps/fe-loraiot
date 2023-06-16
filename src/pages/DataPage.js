@@ -8,6 +8,7 @@ import ShowChart from '../helper/ShowChart';
 import ShowTable from '../helper/ShowTable';
 import '../css/DatePicker.css';
 import '../css/Chart.css';
+import '../css/Table.css';
 
 
 Chart.register(CategoryScale, LinearScale);
@@ -70,7 +71,7 @@ function DataPage() {
             />
           )}
         </div>
-        <ShowTable data={nodes} />
+        <ShowTable data={nodes}/><br /><br />
         <ShowChart data={data} scale={"Suhu"} mode={"Avg"}/><br /><br />
         <ShowChart data={data} scale={"RH"} mode={"Avg"}/><br /><br />
         <ShowChart data={data} scale={"SH"} mode={"Avg"}/><br /><br />
