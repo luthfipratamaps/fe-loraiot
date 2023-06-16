@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import MonthlyDataPage from './pages/MonthlyDataPage';
 import DataPage from './pages/DataPage';
+import DownloadPage from './pages/DownloadPage';
 import Footer from './components/Footer';
 import './css/App.css';
 
@@ -22,12 +23,16 @@ function App() {
             <li>
               <Link to="/monthly-data">Monthly Data</Link>
             </li>
+            <li>
+              <Link to="/download">Download</Link>
+            </li>
           </ul>
         </nav>
         
         <Routes>
           <Route exact path="/" element={<DataPage />} />
           <Route path="/monthly-data" element={<MonthlyDataPage />}/>
+          <Route path="/download" element={<DownloadPage />}/>
         </Routes>
         <Footer />
       </div>
