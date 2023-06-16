@@ -25,9 +25,22 @@ function DownloadPage() {
   }, []);
 
   const filterDate = (date) => {
-    const dateString = date.toISOString().slice(0, 10);
-    const result = availableDates.includes(dateString);
-    return result;
+    const formattedDate = date.toISOString().slice(0, 10);
+    const previousDate = new Date(date);
+    previousDate.setDate(previousDate.getDate() - 1);
+    const formattedPreviousDate = previousDate.toISOString().split('T')[0];
+    const nextDate = new Date(date);
+    nextDate.setDate(nextDate.getDate() + 1);
+    const formattedNextDate = nextDate.toISOString().split('T')[0];
+
+    console.log('Prev day:', formattedPreviousDate, availableDates.includes(formattedPreviousDate));
+    console.log(formattedDate, availableDates.includes(formattedDate));
+    console.log('Next day:', formattedNextDate, availableDates.includes(formattedNextDate));
+
+    return (
+      (availableDates.includes(formattedDate) && availableDates.includes(formattedNextDate)) ||
+      (!availableDates.includes(formattedDate) && availableDates.includes(formattedNextDate))
+    );
   };
 
   const handleDownload = () => {

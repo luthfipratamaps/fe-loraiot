@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseApi = 'http://localhost:5000';
+const baseApi = 'http://103.156.114.74:40424';
 
 class Api {
   static getAvailableDates() {
