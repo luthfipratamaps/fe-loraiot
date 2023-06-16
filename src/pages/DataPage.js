@@ -5,6 +5,7 @@ import { CategoryScale, LinearScale } from 'chart.js';
 import Chart from 'chart.js/auto';
 import Api from '../helper/Api';
 import ShowChart from '../helper/ShowChart';
+import ShowTable from '../helper/ShowTable';
 import '../css/DatePicker.css';
 import '../css/Chart.css';
 
@@ -15,6 +16,7 @@ function DataPage() {
   const [data, setData] = useState([]);
   const [availableDates, setAvailableDates] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [nodes, setNodes] = useState([]);
 
   useEffect(() => {
     Api.getAvailableDates()
@@ -28,6 +30,14 @@ function DataPage() {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    Api.getNodes()
+      .then((res) => {
+        setNodes(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+  
   useEffect(() => {
     if (selectedDate) {
       Api.getDataByDate(selectedDate.toISOString().slice(0, 10))
@@ -60,6 +70,7 @@ function DataPage() {
             />
           )}
         </div>
+        <ShowTable data={nodes} />
         <ShowChart data={data} scale={"Suhu"} mode={"Avg"}/><br /><br />
         <ShowChart data={data} scale={"RH"} mode={"Avg"}/><br /><br />
         <ShowChart data={data} scale={"SH"} mode={"Avg"}/><br /><br />
