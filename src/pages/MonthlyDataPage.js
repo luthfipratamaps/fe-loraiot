@@ -32,7 +32,7 @@ function MonthlyDataPage() {
 
   useEffect(() => {
     if (selectedDate) {
-      Api.getDataByMonth(selectedDate.getMonth() + 1)
+      Api.getDataByMonth(selectedDate.toISOString().slice(0, 7))
         .then((res) => {
           setData(res.data);
         })
